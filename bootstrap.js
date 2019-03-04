@@ -43,7 +43,7 @@ agent.on("message", msg => {
   }
 });
 agent.on("error", msg => {});
-agent.once("exit", msg => {
+agent.on("exit", msg => {
   console.log("----------------agent exit");
 });
 // Work
@@ -84,12 +84,15 @@ function killAppWork() {
 }
 setInterval(() => {
   console.log(Object.keys(cluster.workers));
-}, 2000);
+
+  console.log(agent.killed);
+}, 500);
 
 setTimeout(() => {
   killAgent();
   killAppWork();
-}, 300);
+}, 700);
 
 // --max-http-header-size=size
 // --prof
+// https://github.com/eggjs/egg-cluster/blob/master/lib/utils/terminate.js

@@ -1,6 +1,4 @@
 const gracefulExit = require("graceful-process");
-const debug = require("debug")("agent:messenger:ipc");
-const log = require("./logger");
 const agent = {
   ready() {
     console.log("ready agent");
