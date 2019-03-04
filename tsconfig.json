@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es2015",
+    "noImplicitAny": false,
+    "strictFunctionTypes": false,
+    "allowSyntheticDefaultImports": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationDir": "./dist/@types",
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@util/*": ["./src/util/*"]
+    },
+    "lib": ["dom", "es2017"]
+  },
+  "include": ["src/**/*"],
+  "compileOnSave": true
+}

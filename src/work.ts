@@ -2,14 +2,10 @@ const gracefulExit = require("graceful-process");
 
 const Koa = require("koa");
 const cluster = require("cluster");
-const log = require("./logger");
 console.log(cluster.worker.process.pid);
 console.log("worker2");
 var graceful = require("graceful");
-process.on("message", data => {
-  log("worker inner:");
-  log(data);
-});
+
 let app = new Koa();
 
 app.use(async ctx => {
@@ -17,7 +13,6 @@ app.use(async ctx => {
   ctx.body = {
     name: "lishica"
   };
-  sda;
   process.send({
     to: "agent",
     id: process.pid,

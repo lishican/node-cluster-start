@@ -1,4 +1,4 @@
-const gracefulExit = require("graceful-process");
+import  gracefulExit = require("graceful-process");
 const agent = {
   ready() {
     console.log("ready agent");
