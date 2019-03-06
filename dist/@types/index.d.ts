@@ -3,22 +3,29 @@ import "reflect-metadata";
 import { EventEmitter } from "events";
 interface Option {
     work: string;
+    common?: string;
     agent: string;
     number: number;
     restart: number;
 }
-declare class Manager {
-    agent: any;
-    setAgent(agent: any): void;
-}
 declare class BootStrap extends EventEmitter {
     private agent;
     private options;
-    manger: Manager;
-    private wokerMap;
+    private manger;
+    private limit;
+    private isClosed;
+    private isStarting;
+    private log;
     constructor(options: Option);
-    forkNewWork(exec: any, name: any): void;
-    forkWorker(): void;
-    forkAgent(): void;
+    send(from: string, to: string, msg: string, tag?: string): void;
+    sendToCluster(tag: string, msg: any, from: string): void;
+    sentToAgent(msg: any, from: string): void;
+    killApp(): void;
+    onMasterExit(): void;
+    onSignal(): void;
+    newWorker(execFile: any, name: any): void;
+    isCanClustefork(): boolean;
+    forkWorkerApp(): void;
+    forkAgentApp(): void;
 }
 export default BootStrap;

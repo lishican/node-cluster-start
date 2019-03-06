@@ -29,7 +29,7 @@ const agent = {
 };
 
 process.on("message", data => {
-  console.log("agent receive");
+  console.log("agent receive----");
   console.log(data);
 });
 

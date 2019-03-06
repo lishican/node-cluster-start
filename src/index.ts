@@ -3,131 +3,213 @@ import { EventEmitter } from "events";
 import child_process, { ChildProcess } from "child_process";
 import { Container } from "typedi";
 import * as path from "path";
-import cluster, { Worker } from "cluster";
-// import cfork = require("cfork");
+import cluster, { Worker, worker } from "cluster";
+import Manager from "./lib/mannger";
+import fs from "fs";
+function logger(msg: string): void {
+  console.log(msg);
+}
 
 interface WorkerPlus extends Worker {
-  disableRefork: boolean;
+  _tag?: string;
+  Worker;
 }
 
 interface Option {
   work: string;
+  common?: string;
   agent: string;
   number: number;
   restart: number;
 }
 
-class Manager {
-  agent: any;
-
-  setAgent(agent) {
-    this.agent = agent;
-  }
-}
+const defer = setImmediate || process.nextTick;
 
 class BootStrap extends EventEmitter {
   private agent: ChildProcess;
   private options: Option;
-  manger: Manager;
+  private manger: Manager;
+  private limit: number = 0;
+  private isClosed: boolean = false;
+  private isStarting: boolean = false;
+  private log: (msg: string) => void;
 
-  private wokerMap: Map<string, any> = new Map();
   constructor(options: Option) {
     super();
+
+    this.manger = new Manager();
+    this.log = logger;
     this.options = options;
 
-    this.manger = Container.get(Manager);
+    this.once("agent-start", () => {
+      this.forkWorkerApp();
+    });
+    process.once("SIGINT", this.onSignal.bind(this, "SIGINT"));
+    // kill(3) Ctrl-\
+    process.once("SIGQUIT", this.onSignal.bind(this, "SIGQUIT"));
+    // kill(15) default
+    process.once("SIGTERM", this.onSignal.bind(this, "SIGTERM"));
+    process.once("exit", this.onMasterExit.bind(this));
 
-    this.once("agent-start", data => {
-      this.forkWorker();
+    this.on("master-exit", () => {});
+    this.on("app-cluser-start", () => {});
+    this.on("app-cluser-start", () => {});
+    this.on("app-agent-error", () => {});
+    this.on("app-agent-exit", () => {});
+    this.on("app-cluster-exit", () => {});
+    this.on("app-cluster-start", () => {});
+    this.on("app-cluster-online", () => {});
+    this.on("message", data => {
+      if (data.msg.cmd == "getOsInfo") {
+        let respdata = this.manger.getWorkerMemoryUsage();
+        cluster.workers[data.msg.id].send({
+          data: respdata,
+          reqId: data.msg.requestId
+        });
+      }
+      console.log("master receive", data);
     });
 
-    process.nextTick(() => {
-      this.forkAgent();
+    // setInterval(() => {
+    // console.log(this.manger.getWorkerMemoryUsage());
+    // console.log(this.manger.listWorkerIds());
+    // fs.writeFileSync("pid", this.manger.listWorkerIds(), "utf-8");
+    // }, 2000);
+
+    defer(() => {
+      this.forkAgentApp();
     });
   }
 
-  forkNewWork(exec, name) {
+  send(from: string, to: string, msg: string, tag: string = "work") {
+    if (to === "cluster") {
+      this.sendToCluster(tag, msg, from);
+    } else if (to == "agent") {
+      this.sentToAgent(msg, from);
+    } else if (to == "master") {
+      this.emit("message", { msg, from });
+    }
+  }
+  sendToCluster(tag: string, msg: any, from: string) {
+    let workers = this.manger.findWorlerByTag(tag);
+    for (let i = 0; i < workers.length; i++) {
+      workers[i].send({
+        from: from,
+        msg: msg
+      });
+    }
+  }
+  sentToAgent(msg: any, from: string) {
+    this.manger._agent.send({
+      from: from,
+      msg: msg
+    });
+  }
+
+  killApp() {
+    for (let id in cluster.workers) {
+      let worker = cluster.workers[id];
+      worker.kill();
+    }
+
+    this.agent.removeAllListeners();
+  }
+
+  onMasterExit() {
+    this.emit("master-exit");
+  }
+  onSignal() {
+    fs.unlinkSync("pid");
+    this.isClosed = true;
+    try {
+      this.killApp();
+      defer(() => {
+        process.exit(0);
+      });
+    } catch (error) {
+      process.exit(1);
+    }
+  }
+
+  newWorker(execFile, name) {
     cluster.setupMaster({
-      exec: exec,
-      args: ["--use", name]
+      exec: execFile,
+      args: ["--tag", name]
       // silent: true
     });
     cluster.fork();
   }
 
-  forkWorker() {
-    for (let i = 0; i < this.options.number; i++) {
-      this.forkNewWork(this.options.work, "work");
-    }
+  isCanClustefork() {
+    return this.limit < this.options.restart;
+  }
 
-    this.forkNewWork(path.resolve(__dirname, "./common"), "common");
+  forkWorkerApp() {
+    for (let i = 0; i < this.options.number; i++) {
+      this.newWorker(this.options.work, "work");
+    }
+    // 初始化通用的cluster
+    this.newWorker(this.options.common, "commom");
     cluster.on("fork", (worker: any) => {
-      worker.disableRefork = true;
-      console.log(worker.id, worker.process.pid, worker.process.spawnargs[3]);
-      this.wokerMap.set(worker.process.spawnargs[3], {
-        pid: worker.process.pid,
-        type: worker.process.spawnargs[3],
-        worker: worker
-      });
-      // this.workerManager.setWorker(worker);
+      worker._tag = worker.process.spawnargs[3];
+      this.manger.setWorkder(worker.process.pid, worker);
       worker.on("message", msg => {
-        if (msg.to == "common") {
-          this.wokerMap.get("common").worker.send(msg);
-        }
+        this.send(msg.tag, msg.to, msg.data);
       });
     });
     cluster.on("disconnect", (worker: WorkerPlus) => {
-      console.log("worker disconnect", worker.process.pid);
+      this.log(`worker ${worker._tag} disconnect`);
     });
-    cluster.on("exit", (worker, code, signal) => {
-      // console.log("worker exit", worker, code, signal);
-      if (code == 110) {
-        this.forkNewWork(path.resolve(__dirname, "./common"), "common");
+
+    cluster.on("exit", (worker: WorkerPlus, code: any, signal) => {
+      this.emit("app-cluster-exit", {
+        worker,
+        code
+      });
+      this.log(`worker ${worker._tag} exit code ${code} signal ${signal}`);
+      this.manger.deleteWorker(worker.process.pid);
+      if (this.isCanClustefork()) {
+        this.newWorker(this.options[worker._tag], worker._tag);
       }
     });
-    cluster.on("listening", (worker, address) => {
-      console.log(worker.process.pid, address);
+    cluster.on("listening", (worker: WorkerPlus, address) => {
+      this.emit("app-cluster-start");
+      this.log(
+        `worker ${worker._tag} ${
+          worker.process.pid
+        } islistening address ${address}`
+      );
     });
-    cluster.on("online", worker => {
-      console.log("worker online", worker.process.pid);
+    cluster.on("online", (worker: WorkerPlus) => {
+      this.emit("app-cluster-online");
+      this.log(`worker ${worker._tag} ${worker.process.pid} online`);
     });
   }
 
-  forkAgent() {
+  forkAgentApp() {
     this.agent = child_process.fork(this.options.agent);
     this.emit("agent-start", {
       agent: this.agent.pid
     });
     this.manger.setAgent(this.agent);
     this.agent.on("message", msg => {
-      this.wokerMap.get("common").worker.send(msg);
+      this.send("agent", msg.to, msg.data);
     });
-    // this.agent.on("error", msg => {
-    //   console.log("----------------agent error", msg);
-    // });
-    // this.agent.on("exit", msg => {
-    //   console.log("----------------agent exit", msg);
-    // });
+    this.agent.on("error", err => {
+      this.emit("app-agent-error", err);
+    });
+    this.agent.on("exit", msg => {
+      this.emit("app-agent-exit", msg);
+    });
   }
 }
 
 new BootStrap({
   work: path.resolve(__dirname, "./work"),
+  common: path.resolve(__dirname, "./common"),
   agent: path.resolve(__dirname, "./agent"),
   number: 2,
   restart: 20
 });
-setInterval(() => {
-  console.log(
-    "master\nheapUsed",
-    process.memoryUsage().heapUsed / 1024 / 1024 + "m"
-  );
-  console.log("heapTotal", process.memoryUsage().heapTotal / 1024 / 1024 + "m");
-  console.log("rss", process.memoryUsage().rss / 1024 / 1024 + "m");
-
-  // if (process.memoryUsage().heapUsed / 1024 / 1024 > 7) {
-  //   process.exit(110);
-  // }
-}, 2000);
 
 export default BootStrap;
