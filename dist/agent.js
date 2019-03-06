@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const gracefulExit = require("graceful-process");
+console.log("我是秘书 agent", process.pid);
 const agent = {
     ready() {
         console.log("ready agent");
@@ -12,7 +13,7 @@ const agent = {
         });
         setTimeout(() => {
             process.send({
-                to: "work",
+                to: "common",
                 type: "agent-cron",
                 data: count,
                 time: Date.now()

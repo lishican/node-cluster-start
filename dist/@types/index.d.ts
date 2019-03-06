@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import "reflect-metadata";
 import { EventEmitter } from "events";
 interface Option {
@@ -14,7 +15,9 @@ declare class BootStrap extends EventEmitter {
     private agent;
     private options;
     manger: Manager;
+    private wokerMap;
     constructor(options: Option);
+    forkNewWork(exec: any, name: any): void;
     forkWorker(): void;
     forkAgent(): void;
 }
