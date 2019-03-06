@@ -1,9 +1,8 @@
 import "reflect-metadata";
 import { EventEmitter } from "events";
 import child_process, { ChildProcess } from "child_process";
-import { Container } from "typedi";
 import * as path from "path";
-import cluster, { Worker, worker } from "cluster";
+import cluster, { Worker } from "cluster";
 import Manager from "./lib/mannger";
 import fs from "fs";
 function logger(msg: string): void {
@@ -66,6 +65,13 @@ class BootStrap extends EventEmitter {
           data: respdata,
           reqId: data.msg.requestId
         });
+      } else if (data.msg.cmd == "test") {
+        // setTimeout(() => {
+        //   cluster.workers[data.msg.id].send({
+        //     data: "test data",
+        //     reqId: data.msg.requestId
+        //   });
+        // }, 5000);
       }
       console.log("master receive", data);
     });
@@ -174,15 +180,11 @@ class BootStrap extends EventEmitter {
     });
     cluster.on("listening", (worker: WorkerPlus, address) => {
       this.emit("app-cluster-start");
-      this.log(
-        `worker ${worker._tag} ${
-          worker.process.pid
-        } islistening address ${address}`
-      );
+      console.log(`worker ${worker._tag} ${worker.process.pid} islistening `);
     });
     cluster.on("online", (worker: WorkerPlus) => {
       this.emit("app-cluster-online");
-      this.log(`worker ${worker._tag} ${worker.process.pid} online`);
+      console.log(`worker ${worker._tag} ${worker.process.pid} online`);
     });
   }
 
@@ -208,7 +210,7 @@ new BootStrap({
   work: path.resolve(__dirname, "./work"),
   common: path.resolve(__dirname, "./common"),
   agent: path.resolve(__dirname, "./agent"),
-  number: 2,
+  number: 3,
   restart: 20
 });
 

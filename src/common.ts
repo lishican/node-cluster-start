@@ -1,55 +1,57 @@
 import cluster from "cluster";
 
 console.log(`我是大家的进程:${process.pid},标签：${process.argv[3]}`);
-
-process.send({
-  to: "cluster",
-  tag: "common",
-  data: "来自common的消息"
-});
-
-setTimeout(() => {
-  process.send({
-    to: "master",
-    tag: "common",
-    data: {
-      cmd: "getOsInfo",
-      pid: process.pid,
-      id: cluster.worker.id
-    }
-  });
-}, 5000);
-
+setInterval(() => {}, 1e5);
 let list = [];
-
 process.on("message", data => {
   console.log("common cluster receive mesg:", data);
-
   let fns = list.filter(v => v.id == data.reqId);
-  fns[0].fn();
+  list = list.filter(v => v.id != data.reqId);
+  fns[0] && fns[0].fn(data);
 });
-
-setInterval(() => {}, 1e5);
-
-async function sendMsgWithPromise() {
+function timeout(time) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve({
+        rCode: 1,
+        msg: "timeout"
+      });
+    }, time);
+  });
+}
+async function sendMsgWithPromise(cmd) {
   let requestId = new Date().valueOf();
   process.send({
     to: "master",
     tag: "common",
     data: {
       requestId: requestId,
-      cmd: "getOsInfo",
+      cmd: cmd,
       pid: process.pid,
       id: cluster.worker.id
     }
   });
-  return new Promise(resolve => {
-    list.push({
-      id: requestId,
-      fn: resolve
-    });
-  });
+  return Promise.race([
+    new Promise(resolve => {
+      list.push({
+        id: requestId,
+        fn: resolve
+      });
+    }),
+    timeout(1000)
+  ]);
 }
+
+setTimeout(() => {
+  sendMsgWithPromise("getOsInfo").then(resp => {
+    console.log("-----getOsInfo", resp);
+  });
+}, 3000);
+setTimeout(() => {
+  sendMsgWithPromise("test").then(resp => {
+    console.log("-----test", resp);
+  });
+}, 3000);
 
 // setInterval(() => {}, 1e3);
 

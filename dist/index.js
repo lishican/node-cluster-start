@@ -55,6 +55,14 @@ class BootStrap extends events_1.EventEmitter {
                     reqId: data.msg.requestId
                 });
             }
+            else if (data.msg.cmd == "test") {
+                // setTimeout(() => {
+                //   cluster.workers[data.msg.id].send({
+                //     data: "test data",
+                //     reqId: data.msg.requestId
+                //   });
+                // }, 5000);
+            }
             console.log("master receive", data);
         });
         // setInterval(() => {
@@ -155,11 +163,11 @@ class BootStrap extends events_1.EventEmitter {
         });
         cluster_1.default.on("listening", (worker, address) => {
             this.emit("app-cluster-start");
-            this.log(`worker ${worker._tag} ${worker.process.pid} islistening address ${address}`);
+            console.log(`worker ${worker._tag} ${worker.process.pid} islistening `);
         });
         cluster_1.default.on("online", (worker) => {
             this.emit("app-cluster-online");
-            this.log(`worker ${worker._tag} ${worker.process.pid} online`);
+            console.log(`worker ${worker._tag} ${worker.process.pid} online`);
         });
     }
     forkAgentApp() {
@@ -183,7 +191,7 @@ new BootStrap({
     work: path.resolve(__dirname, "./work"),
     common: path.resolve(__dirname, "./common"),
     agent: path.resolve(__dirname, "./agent"),
-    number: 2,
+    number: 3,
     restart: 20
 });
 exports.default = BootStrap;
