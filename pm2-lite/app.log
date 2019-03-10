@@ -1,348 +1,161 @@
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  [32m'cache-control'[39m: [32m'max-age=0'[39m,
-  [32m'upgrade-insecure-requests'[39m: [32m'1'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept:
-   [32m'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  pragma: [32m'no-cache'[39m,
-  [32m'cache-control'[39m: [32m'no-cache'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept: [32m'image/webp,image/apng,image/*,*/*;q=0.8'[39m,
-  referer: [32m'http://127.0.0.1:5001/'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  [32m'cache-control'[39m: [32m'max-age=0'[39m,
-  [32m'upgrade-insecure-requests'[39m: [32m'1'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept:
-   [32m'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  pragma: [32m'no-cache'[39m,
-  [32m'cache-control'[39m: [32m'no-cache'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept: [32m'image/webp,image/apng,image/*,*/*;q=0.8'[39m,
-  referer: [32m'http://127.0.0.1:5001/'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  [32m'cache-control'[39m: [32m'max-age=0'[39m,
-  [32m'upgrade-insecure-requests'[39m: [32m'1'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept:
-   [32m'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  pragma: [32m'no-cache'[39m,
-  [32m'cache-control'[39m: [32m'no-cache'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept: [32m'image/webp,image/apng,image/*,*/*;q=0.8'[39m,
-  referer: [32m'http://127.0.0.1:5001/'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  [32m'cache-control'[39m: [32m'max-age=0'[39m,
-  [32m'upgrade-insecure-requests'[39m: [32m'1'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept:
-   [32m'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  pragma: [32m'no-cache'[39m,
-  [32m'cache-control'[39m: [32m'no-cache'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept: [32m'image/webp,image/apng,image/*,*/*;q=0.8'[39m,
-  referer: [32m'http://127.0.0.1:5001/'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  [32m'cache-control'[39m: [32m'max-age=0'[39m,
-  [32m'upgrade-insecure-requests'[39m: [32m'1'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept:
-   [32m'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  pragma: [32m'no-cache'[39m,
-  [32m'cache-control'[39m: [32m'no-cache'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept: [32m'image/webp,image/apng,image/*,*/*;q=0.8'[39m,
-  referer: [32m'http://127.0.0.1:5001/'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  [32m'cache-control'[39m: [32m'max-age=0'[39m,
-  [32m'upgrade-insecure-requests'[39m: [32m'1'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept:
-   [32m'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  pragma: [32m'no-cache'[39m,
-  [32m'cache-control'[39m: [32m'no-cache'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept: [32m'image/webp,image/apng,image/*,*/*;q=0.8'[39m,
-  referer: [32m'http://127.0.0.1:5001/'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  [32m'cache-control'[39m: [32m'max-age=0'[39m,
-  [32m'upgrade-insecure-requests'[39m: [32m'1'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept:
-   [32m'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  pragma: [32m'no-cache'[39m,
-  [32m'cache-control'[39m: [32m'no-cache'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept: [32m'image/webp,image/apng,image/*,*/*;q=0.8'[39m,
-  referer: [32m'http://127.0.0.1:5001/'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  [32m'cache-control'[39m: [32m'max-age=0'[39m,
-  [32m'upgrade-insecure-requests'[39m: [32m'1'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept:
-   [32m'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  pragma: [32m'no-cache'[39m,
-  [32m'cache-control'[39m: [32m'no-cache'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept: [32m'image/webp,image/apng,image/*,*/*;q=0.8'[39m,
-  referer: [32m'http://127.0.0.1:5001/'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  [32m'cache-control'[39m: [32m'max-age=0'[39m,
-  [32m'upgrade-insecure-requests'[39m: [32m'1'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept:
-   [32m'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  pragma: [32m'no-cache'[39m,
-  [32m'cache-control'[39m: [32m'no-cache'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept: [32m'image/webp,image/apng,image/*,*/*;q=0.8'[39m,
-  referer: [32m'http://127.0.0.1:5001/'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  [32m'cache-control'[39m: [32m'max-age=0'[39m,
-  [32m'upgrade-insecure-requests'[39m: [32m'1'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept:
-   [32m'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  pragma: [32m'no-cache'[39m,
-  [32m'cache-control'[39m: [32m'no-cache'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept: [32m'image/webp,image/apng,image/*,*/*;q=0.8'[39m,
-  referer: [32m'http://127.0.0.1:5001/'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  [32m'cache-control'[39m: [32m'max-age=0'[39m,
-  [32m'upgrade-insecure-requests'[39m: [32m'1'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept:
-   [32m'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  pragma: [32m'no-cache'[39m,
-  [32m'cache-control'[39m: [32m'no-cache'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept: [32m'image/webp,image/apng,image/*,*/*;q=0.8'[39m,
-  referer: [32m'http://127.0.0.1:5001/'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  [32m'cache-control'[39m: [32m'max-age=0'[39m,
-  [32m'upgrade-insecure-requests'[39m: [32m'1'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept:
-   [32m'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-{ host: [32m'127.0.0.1:5001'[39m,
-  connection: [32m'keep-alive'[39m,
-  pragma: [32m'no-cache'[39m,
-  [32m'cache-control'[39m: [32m'no-cache'[39m,
-  [32m'user-agent'[39m:
-   [32m'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'[39m,
-  accept: [32m'image/webp,image/apng,image/*,*/*;q=0.8'[39m,
-  referer: [32m'http://127.0.0.1:5001/'[39m,
-  [32m'accept-encoding'[39m: [32m'gzip, deflate, br'[39m,
-  [32m'accept-language'[39m: [32m'zh-CN,zh;q=0.9'[39m }
-[33m231[39m
-[33m231[39m
-[33m231[39m
-[33m231[39m
-[33m231[39m
-[33m231[39m
-[33m231[39m
-[33m231[39m
-ReferenceError: dsa is not defined
-    at Server.http.createServer (D:\code\testApp\index.js:22:5)
-    at Server.emit (events.js:182:13)
-    at parserOnIncoming (_http_server.js:652:12)
-    at HTTPParser.parserOnHeadersComplete (_http_common.js:109:17)
-ReferenceError: dsa is not defined
-    at Server.http.createServer (D:\code\testApp\index.js:22:5)
-    at Server.emit (events.js:182:13)
-    at parserOnIncoming (_http_server.js:652:12)
-    at HTTPParser.parserOnHeadersComplete (_http_common.js:109:17)
-ReferenceError: dsa is not defined
-    at Server.http.createServer (D:\code\testApp\index.js:22:5)
-    at Server.emit (events.js:182:13)
-    at parserOnIncoming (_http_server.js:652:12)
-    at HTTPParser.parserOnHeadersComplete (_http_common.js:109:17)
-ReferenceError: dsa is not defined
-    at Server.http.createServer (D:\code\testApp\index.js:22:5)
-    at Server.emit (events.js:182:13)
-    at parserOnIncoming (_http_server.js:652:12)
-    at HTTPParser.parserOnHeadersComplete (_http_common.js:109:17)
-ReferenceError: dsa is not defined
-    at Server.http.createServer (D:\code\testApp\index.js:22:5)
-    at Server.emit (events.js:182:13)
-    at parserOnIncoming (_http_server.js:652:12)
-    at HTTPParser.parserOnHeadersComplete (_http_common.js:109:17)
-ReferenceError: dsa is not defined
-    at Server.http.createServer (D:\code\testApp\index.js:22:5)
-    at Server.emit (events.js:182:13)
-    at parserOnIncoming (_http_server.js:652:12)
-    at HTTPParser.parserOnHeadersComplete (_http_common.js:109:17)
-ReferenceError: dsa is not defined
-    at Server.http.createServer (D:\code\testApp\index.js:22:5)
-    at Server.emit (events.js:182:13)
-    at parserOnIncoming (_http_server.js:652:12)
-    at HTTPParser.parserOnHeadersComplete (_http_common.js:109:17)
-ReferenceError: dsa is not defined
-    at Server.http.createServer (D:\code\testApp\index.js:22:5)
-    at Server.emit (events.js:182:13)
-    at parserOnIncoming (_http_server.js:652:12)
-    at HTTPParser.parserOnHeadersComplete (_http_common.js:109:17)
-ReferenceError: dsa is not defined
-    at Server.http.createServer (D:\code\testApp\index.js:22:5)
-    at Server.emit (events.js:182:13)
-    at parserOnIncoming (_http_server.js:652:12)
-    at HTTPParser.parserOnHeadersComplete (_http_common.js:109:17)
-ReferenceError: dsa is not defined
-    at Server.http.createServer (D:\code\testApp\index.js:22:5)
-    at Server.emit (events.js:182:13)
-    at parserOnIncoming (_http_server.js:652:12)
-    at HTTPParser.parserOnHeadersComplete (_http_common.js:109:17)
-ReferenceError: dsa is not defined
-    at Server.http.createServer (D:\code\testApp\index.js:22:5)
-    at Server.emit (events.js:182:13)
-    at parserOnIncoming (_http_server.js:652:12)
-    at HTTPParser.parserOnHeadersComplete (_http_common.js:109:17)
-ReferenceError: dsa is not defined
-    at Server.http.createServer (D:\code\testApp\index.js:22:5)
-    at Server.emit (events.js:182:13)
-    at parserOnIncoming (_http_server.js:652:12)
-    at HTTPParser.parserOnHeadersComplete (_http_common.js:109:17)
-ReferenceError: dsa is not defined
-    at Server.http.createServer (D:\code\testApp\index.js:22:5)
-    at Server.emit (events.js:182:13)
-    at parserOnIncoming (_http_server.js:652:12)
-    at HTTPParser.parserOnHeadersComplete (_http_common.js:109:17)
-ReferenceError: dsa is not defined
-    at Server.http.createServer (D:\code\testApp\index.js:22:5)
-    at Server.emit (events.js:182:13)
-    at parserOnIncoming (_http_server.js:652:12)
-    at HTTPParser.parserOnHeadersComplete (_http_common.js:109:17)
-ReferenceError: dsa is not defined
-    at Server.http.createServer (D:\code\testApp\index.js:22:5)
-    at Server.emit (events.js:182:13)
-    at parserOnIncoming (_http_server.js:652:12)
-    at HTTPParser.parserOnHeadersComplete (_http_common.js:109:17)
-ReferenceError: dsa is not defined
-    at Server.http.createServer (D:\code\testApp\index.js:22:5)
-    at Server.emit (events.js:182:13)
-    at parserOnIncoming (_http_server.js:652:12)
-    at HTTPParser.parserOnHeadersComplete (_http_common.js:109:17)
-ReferenceError: dsa is not defined
-    at Server.http.createServer (D:\code\testApp\index.js:22:5)
-    at Server.emit (events.js:182:13)
-    at parserOnIncoming (_http_server.js:652:12)
-    at HTTPParser.parserOnHeadersComplete (_http_common.js:109:17)
-ReferenceError: dsa is not defined
-    at Server.http.createServer (D:\code\testApp\index.js:22:5)
-    at Server.emit (events.js:182:13)
-    at parserOnIncoming (_http_server.js:652:12)
-    at HTTPParser.parserOnHeadersComplete (_http_common.js:109:17)
-ReferenceError: dsa is not defined
-    at Server.http.createServer (D:\code\testApp\index.js:22:5)
-    at Server.emit (events.js:182:13)
-    at parserOnIncoming (_http_server.js:652:12)
-    at HTTPParser.parserOnHeadersComplete (_http_common.js:109:17)
-ReferenceError: dsa is not defined
-    at Server.http.createServer (D:\code\testApp\index.js:22:5)
-    at Server.emit (events.js:182:13)
-    at parserOnIncoming (_http_server.js:652:12)
-    at HTTPParser.parserOnHeadersComplete (_http_common.js:109:17)
+C:\workspace\node-cluster-start\pm2-lite\index.js cluster 1
+fork 5372
+worker 5372 receive message
+ { cmd: '213' }
+C:\workspace\node-cluster-start\pm2-lite\index.js cluster 1
+fork 4360
+worker 4360 receive message
+ { cmd: '213' }
+C:\workspace\node-cluster-start\pm2-lite\index.js cluster 1
+fork 12120
+worker 12120 receive message
+ { cmd: '213' }
+C:\workspace\node-cluster-start\pm2-lite\index.js cluster 1
+fork 1032
+worker 1032 receive message
+ { cmd: '213' }
+exit Worker {
+  _events: { message: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  exitedAfterDisconnect: false,
+  state: 'dead',
+  id: 1,
+  process:
+   ChildProcess {
+     _events:
+      { internalMessage: [Array],
+        error: [Function],
+        message: [Function] },
+     _eventsCount: 3,
+     _maxListeners: undefined,
+     _closesNeeded: 2,
+     _closesGot: 1,
+     connected: false,
+     signalCode: null,
+     exitCode: 1,
+     killed: false,
+     spawnfile: 'C:\\Program Files\\nodejs\\node.exe',
+     _handle: null,
+     spawnargs:
+      [ 'C:\\Program Files\\nodejs\\node.exe',
+        'C:\\workspace\\node-cluster-start\\pm2-lite\\index.js',
+        '--name',
+        'daemon',
+        '--port',
+        '5001' ],
+     pid: 1032,
+     stdin: null,
+     stdout: null,
+     stderr: null,
+     stdio: [ null, null, null, null ],
+     channel: null,
+     _channel: [Getter/Setter],
+     _handleQueue: null,
+     _pendingMessage: null,
+     send: [Function],
+     _send: [Function],
+     disconnect: [Function],
+     _disconnect: [Function] } }
+C:\workspace\node-cluster-start\pm2-lite\index.js cluster 1
+fork 10764
+worker 10764 receive message
+ { cmd: '213' }
+exit Worker {
+  _events: { message: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  exitedAfterDisconnect: false,
+  state: 'dead',
+  id: 1,
+  process:
+   ChildProcess {
+     _events:
+      { internalMessage: [Array],
+        error: [Function],
+        message: [Function] },
+     _eventsCount: 3,
+     _maxListeners: undefined,
+     _closesNeeded: 2,
+     _closesGot: 1,
+     connected: false,
+     signalCode: null,
+     exitCode: 1,
+     killed: false,
+     spawnfile: 'C:\\Program Files\\nodejs\\node.exe',
+     _handle: null,
+     spawnargs:
+      [ 'C:\\Program Files\\nodejs\\node.exe',
+        'C:\\workspace\\node-cluster-start\\pm2-lite\\index.js',
+        '--name',
+        'daemon',
+        '--port',
+        '5001' ],
+     pid: 10764,
+     stdin: null,
+     stdout: null,
+     stderr: null,
+     stdio: [ null, null, null, null ],
+     channel: null,
+     _channel: [Getter/Setter],
+     _handleQueue: null,
+     _pendingMessage: null,
+     send: [Function],
+     _send: [Function],
+     disconnect: [Function],
+     _disconnect: [Function] } }
+C:\workspace\node-cluster-start\pm2-lite\index.js cluster 1
+fork 2388
+worker 2388 receive message
+ { cmd: '213' }
+C:\workspace\node-cluster-start\pm2-lite\index.js cluster 1
+fork 14148
+worker 14148 receive message
+ { cmd: '213' }
+exit Worker {
+  _events: { message: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  exitedAfterDisconnect: false,
+  state: 'dead',
+  id: 1,
+  process:
+   ChildProcess {
+     _events:
+      { internalMessage: [Array],
+        error: [Function],
+        message: [Function] },
+     _eventsCount: 3,
+     _maxListeners: undefined,
+     _closesNeeded: 2,
+     _closesGot: 1,
+     connected: false,
+     signalCode: null,
+     exitCode: 1,
+     killed: false,
+     spawnfile: 'C:\\Program Files\\nodejs\\node.exe',
+     _handle: null,
+     spawnargs:
+      [ 'C:\\Program Files\\nodejs\\node.exe',
+        'C:\\workspace\\node-cluster-start\\pm2-lite\\index.js',
+        '--name',
+        'daemon',
+        '--port',
+        '5001' ],
+     pid: 14148,
+     stdin: null,
+     stdout: null,
+     stderr: null,
+     stdio: [ null, null, null, null ],
+     channel: null,
+     _channel: [Getter/Setter],
+     _handleQueue: null,
+     _pendingMessage: null,
+     send: [Function],
+     _send: [Function],
+     disconnect: [Function],
+     _disconnect: [Function] } }
+C:\workspace\node-cluster-start\pm2-lite\index.js cluster 1
+fork 16824
+worker 16824 receive message
+ { cmd: '213' }
